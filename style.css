@@ -18,7 +18,7 @@ body, html {
 }
 
   .content {
-    min-height: 90%;
+    height: 70%;
     padding: 20px;
     /* Center content vertically */
     display: flex;
@@ -29,8 +29,8 @@ body, html {
   .wave-container {
     position: fixed;
     bottom: 0;
-    width: 100%;
-    height: 200px; /* Default height */
+    width: 100vw;
+    height: 30vh; /* Default height */
     display: flex;
     justify-content: center;
   }
@@ -89,7 +89,8 @@ body, html {
   /* For small devices (mobile) */
   @media (max-width: 640px) {
     .wave-container {
-      height: 150px; /* Smaller height for small screens */
+      height: 20vh; /* Smaller height for small screens */
+      width: 100vw;
     }
     
     .wave {
@@ -118,11 +119,13 @@ body, html {
   /* For medium devices (tablets) */
   @media (min-width: 641px) and (max-width: 1024px) {
     .wave-container {
-      height: 150px; /* Adjust height for tablets */
+      height: 20vh; /* Adjust height for tablets */
+      width: 100vw;
     }
     
     .wave {
       height: 100px; /* Medium-sized waves */
+      width: 100%;
     }
   
     @keyframes float {
@@ -147,11 +150,13 @@ body, html {
   /* For large devices (desktops) */
   @media (min-width: 1025px) {
     .wave-container {
-      height: 200px; /* Full size for large screens */
+      height: 25vh; 
+      width: 100vw;
     }
   
     .wave {
-      height: 100%; /* Full-sized waves */
+      height: 100%; 
+      width: 100%;
     }
   }
   
@@ -176,9 +181,9 @@ body, html {
 /* Responsive Design */
 
 /* For small devices (mobile) */
-@media ((max-width: 640px) and (min-width:320px)) {
+@media ((max-width: 640px)) {
   .ship {
-    width: 40vw; /* Smaller width for mobile screens */
+    width: 30vw; /* Smaller width for mobile screens */
     height: 30vh;
     bottom: -20%; /* Adjust bottom position for mobile */
   }
@@ -188,7 +193,7 @@ body, html {
 @media (min-width: 641px) and (max-width: 1024px) {
   .ship {
     width: 40vw; /* Medium size for tablets */
-    height: 35vh;
+    height: 40vh;
     bottom: -30%; /* Adjust bottom position for tablets */
   }
 }
@@ -196,9 +201,9 @@ body, html {
 /* For large devices (desktops) */
 @media (min-width: 1025px) {
   .ship {
-    width: 40vw; /* Default width for large screens */
+    width: 50vw; /* Default width for large screens */
     height: 50vh;
-    bottom: -30%; /* Default bottom position */
+    bottom: -10%; /* Default bottom position */
   }
 }
 
@@ -213,30 +218,7 @@ body, html {
   animation: floatitem 4s ease-in-out infinite; /* Apply animation */
 }
 
-/* Specific positioning for items before the first wave */
-.item1 {
-  bottom: -60%; /* Position item 1 above the first wave */
-  left: 25%; /* Position item 1 from the left */
-  width: 15vw; /* Width for responsiveness */
-}
 
-.item2 {
-  bottom: -25%; /* Same position above the first wave */
-  left: 45%; /* Position item 2 in the center */
-  width: 15vw; /* Width for responsiveness */
-}
-
-.item3 {
-  bottom: -75%; /* Same position above the first wave */
-  left: 70%; /* Position item 3 towards the right */
-  width: 15vw; /* Width for responsiveness */
-}
-
-.item4 {
-  bottom: -75%; /* Position above the second wave */
-  left: 85%; /* Position item 4 from the left */
-  width: 15vw; /* Width for responsiveness */
-}
 
 /* Specific styling for items before the second wave */
 .item-before-second-wave {
@@ -246,17 +228,6 @@ body, html {
   animation: floatitem 5s ease-in-out infinite; /* Apply animation with different duration */
 }
 
-.item5 {
-  bottom: -15%; /* Same position above the second wave */
-  left: 15%; /* Position item 5 in the center */
-  width: 15vw; /* Width for responsiveness */
-}
-
-.item6 {
-  bottom: -10%; /* Same position above the second wave */
-  left: 75%; /* Position item 6 towards the right */
-  width: 15vw; /* Width for responsiveness */
-}
 
 /* Specific styling for items after the third wave */
 .item-before-third-wave {
@@ -266,18 +237,7 @@ body, html {
   animation: floatitem 6s ease-in-out infinite; /* Apply animation with different duration */
 }
 
-.item7 {
-  bottom: -15%; /* Position above the third wave */
-  left: 40%; /* Position item 7 from the left */
-  width: 15vw; /* Width for responsiveness */
-}
 
-.item8 {
-  bottom: -10%; /* Same position above the third wave */
-  left: 60%; /* Position item 8 towards the right */
-  width: 15vw; /* Width for responsiveness */
-  
-}
 
 /* Keyframe for float animation (up and down) */
 @keyframes floatitem {
@@ -294,18 +254,61 @@ body, html {
   .item-before-first-wave,
   .item-before-second-wave,
   .item-before-third-wave {
-      width: 20%; /* Slightly larger width for mobile screens */
+  height: 10vh;
   }
-  .item1,.item2, .item4, .item5, .item6, .item7, .item8 {
-      height: 15vh;
+
+  /* Specific positioning for items before the first wave */
+.item1 {
+    left: 25%; 
+    bottom: -25%;
+   
   }
   
-  .item3{
-    bottom: -30%;
+  .item2 {
+   
+    left: 45%; 
+    bottom: -10%;
   }
-   .item8{
-    bottom: -30%;
-   }
+  
+  .item3 {
+   
+    left: 70%; 
+    bottom: -25%;
+    
+  }
+  .item4{
+    left: 80%; 
+    bottom: -25%;
+  }
+  .item5 {
+ 
+    left: 15%; 
+    bottom: 5%;
+   
+  }
+  
+  .item6 {
+    
+    left: 75%; 
+    bottom: -5%;
+   
+  }
+
+  .item7 {
+ 
+    left: 40%; 
+    bottom: -5%;
+  
+  }
+  
+  .item8 {
+    
+    left: 60%; 
+    bottom: -5%;
+    
+    
+  }
+  
 
 }
 
@@ -313,32 +316,62 @@ body, html {
   .item-before-first-wave,
   .item-before-second-wave,
   .item-before-third-wave {
-      width: 15%; /* Adjust width for tablets */
+     height: 15vh;
   }
  
-
-  .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 {
-      bottom: 0px; /* Adjust bottom position for tablets */
-  }
-
-  .item1{
-    bottom: -25%;
-  }
-  .item2{
-    bottom: -15%;
-  }
-  .item3{
+ /* Specific positioning for items before the first wave */
+ .item1 {
+    left: 25%; 
     bottom: -35%;
+   
+  }
+  
+  .item2 {
+   
+    left: 45%; 
+    bottom: -20%;
+  }
+  
+  .item3 {
+   
+    left: 70%; 
+    bottom: -45%;
+    
   }
   .item4{
-  bottom: -30%;
+    left: 85%; 
+    bottom: -45%;
   }
-  .item7{
-    bottom: 0%;
-  }
-  .item8{
+  .item5 {
+ 
+    left: 15%; 
     bottom: -5%;
+   
   }
+  
+  .item6 {
+    
+    left: 75%; 
+    bottom: -5%;
+   
+  }
+
+  .item7 {
+ 
+    left: 40%; 
+    bottom: -5%;
+  
+  }
+  
+  .item8 {
+    
+    left: 60%; 
+    bottom: -5%;
+    
+    
+  }
+  
+
 }
 
 
@@ -347,26 +380,60 @@ body, html {
   .item-before-first-wave,
   .item-before-second-wave,
   .item-before-third-wave {
-      width: 20%; /* Default width for large screens */
+      height: 20vh; 
   }
   .item4, .item5, .item6, .item7, .item8 {
-    bottom: 0px; /* Adjust bottom position for tablets */
+    bottom: 0px; 
 }
-.item1{
-  bottom: -40%;
-}
-.item2{
-  bottom: -15%;
-}
-.item3{
-  bottom: -45%;
-}
-.item4{
-bottom: -50%;
-}
+.item1 {
+    left: 25%; 
+    bottom: -35%;
+   
+  }
+  
+  .item2 {
+   
+    left: 45%; 
+    bottom: -20%;
+  }
+  
+  .item3 {
+   
+    left: 70%; 
+    bottom: -45%;
+    
+  }
+  .item4{
+    left: 85%; 
+    bottom: -45%;
+  }
+  .item5 {
+ 
+    left: 15%; 
+    bottom: -5%;
+   
+  }
+  
+  .item6 {
+    
+    left: 75%; 
+    bottom: -5%;
+   
+  }
 
+  .item7 {
+ 
+    left: 40%; 
+    bottom: -5%;
+  
+  }
+  
   .item8 {
-    width: 15%;
+    
+    left: 60%; 
+    bottom: -5%;
+    
+    
   }
 }
 
