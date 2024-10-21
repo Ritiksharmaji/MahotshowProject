@@ -5,40 +5,272 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wave Animation</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="NavBarStyle.css">
+  <style>
+  /* Ensure the body and content take up the full height */
+  body, html {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('cloud.jpg') no-repeat center center/cover;
+    position: relative;
+  }
+
+  .star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3; 
+    overflow: hidden;
+  }  
+
+  /* Individual star styling */
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+    
+  }
+
+  /* Animation for stars */
+  @keyframes twinkle {
+    0% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Generate random stars */
+  .star:nth-child(odd) {
+    animation-duration: 3s;
+    animation-delay: 1s;
+  }
+
+  .star:nth-child(even) {
+    animation-duration: 5s;
+    animation-delay: 2s;
+  }
+  
+</style>
 </head>
 <body>
-  <div class="content">
-    <!-- Main content of your page goes here -->
-  </div>
-
-  <!-- Wave animation container -->
-  <div class="wave-container">
-    <!-- Ship -->
-    <img src="IMG_1429.PNG" alt="Ship" class="ship">
-
-    <!-- First wave (front wave) -->
-    <img src="IMG_1430.png" alt="Wave" class="wave wave-front">
-    <!--three items which will comewith the first  wave and before second wave-->
-    <img src="IMG_1437.PNG" alt="Item 1" class="item-before-first-wave item1">
-    <img src="IMG_1439.PNG" alt="Item 2" class="item-before-first-wave item2">
-    <img src="item3.png" alt="Item 3" class="item-before-first-wave item3">
-    <img src="IMG_1438.PNG" alt="Item 6" class="item-before-first-wave item4">
-   
-    <!-- Second wave (middle wave, behind the first one) -->
-    <img src="IMG_1431.PNG" alt="Wave" class="wave wave-middle">
-    <!--three items which will comewith the second  wave and before third wave-->
-    <img src="item4.png" alt="Item 4" class="item-before-second-wave item5">
-    <img src="IMG_1436.PNG" alt="Item 5" class="item-before-second-wave item6">
-    
-
-    <!-- Third wave (back wave, behind the first two) -->
-    <img src="IMG_1432.PNG" alt="Wave" class="wave wave-back">
-     <!--two items which will come after the third wave-->
-     <img src="item7.png" alt="Item7" class="item-before-third-wave item7">
-     <img src="IMG_1435_new.PNG" alt="Item8" class="item-before-third-wave item8">
-  </div>
-
  
+    <!-- Star animation container -->
+    <div class="star-container">
+      <div class="star" style="width: 2px; height: 2px; top: 20%; left: 30%;"></div>
+      <div class="star" style="width: 4px; height: 4px; top: 40%; left: 50%;"></div>
+      <div class="star" style="width: 3px; height: 3px; top: 10%; left: 70%;"></div>
+      <div class="star" style="width: 5px; height: 5px; top: 80%; left: 20%;"></div>
+      <div class="star" style="width: 3px; height: 3px; top: 60%; left: 60%;"></div>
+      <!-- Add more stars as needed -->
+    </div>
+    
+      <nav class="navbar">
+        <div class="navbar-left">
+            <a href="#">
+                <img src="vignanLogo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <div class="navbar-right">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <!-- Hamburger icon -->
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+      </nav>
+
+
+      <div class="content">
+        <!-- <div class="mahotshow-text">
+            <img src="mahotsaw_text-1.png" class="mahotshow-image"/>
+            
+        </div> -->
+        <div class="mahotsav-container">
+            <img src="mahotsaw_text-1.png" class="mahotsav-logo" alt="Mahotsav Logo">
+            <div class="needle-hour"></div>
+            <div class="needle-minute"></div>
+            <div class="center-dot"></div>
+        </div>
+        
+      </div>
+      <div class="right-side-images-container">
+        <div class="right-clock-container">
+          <img src="right_clock.png" alt="Clock" class="right-clock">
+          <button class="login-button">Login</button>
+      </div>
+      
+        <img src="right_clock.png" class="right_side_logo_image"/>
+      </div>
+
+      <div class="wave-container">
+        <!-- Ship -->
+        <img src="IMG_1429.PNG" alt="Ship" class="ship">
+    
+        <!-- First wave (front wave) -->
+        <img src="IMG_1430.PNG" alt="Wave" class="wave wave-front">
+        <!--three items which will comewith the first  wave and before second wave-->
+        <img src="MIC.png" alt="Item_1" class="item-before-first-wave item1">
+        <img src="Bat.png" alt="Item_2" class="item-before-first-wave item2">
+        <img src="Pencil.png" alt="Item_3" class="item-before-first-wave item3">
+        <img src="football.PNG" alt="Item_4" class="item-before-first-wave item4">
+       
+        <!-- Second wave (middle wave, behind the first one) -->
+        <img src="IMG_1431.PNG" alt="Wave" class="wave wave-middle">
+        <!--three items which will comewith the second  wave and before third wave-->
+        <img src="shoe.png" alt="Item_5" class="item-before-second-wave item5">
+        <img src="Bottle.png" alt="Item_6" class="item-before-second-wave item6">
+        
+    
+        <!-- Third wave (back wave, behind the first two) -->
+        <img src="IMG_1432.PNG" alt="Wave" class="wave wave-back">
+         <!--two items which will come after the third wave-->
+         <img src="Muvvalu.png" alt="Item_7" class="item-before-third-wave item7">
+         <img src="Keyboard.png" alt="Item_8" class="item-before-third-wave item8">
+      </div>
+ 
+  
+  <script>
+        // Select the hamburger icon and the nav-links
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Add a click event to toggle the 'active' class on the nav-links
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    function createStars(numStars) {
+  // Select the body element to append stars to
+  const bodyElement = document.querySelector('body');
+  
+  for (let i = 0; i < numStars; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    // Randomize size, position, and animation duration for stars
+    const size = Math.random() * 3 + 1; // Random size between 1px and 4px
+    const left = Math.random() * 100; // Random position along the width
+    const top = Math.random() * 100; // Random position along the height
+    const animationDuration = Math.random() * 2 + 1; // Random animation duration
+
+    // Apply styles to the star
+star.style.width = `${size}px`;
+star.style.height = `${size}px`;
+star.style.left = `${left}vw`;
+star.style.top = `${top}vh`;
+star.style.animationDuration = `${animationDuration}s`;
+
+
+    // Append the star to the body element
+    bodyElement.appendChild(star);
+  }
+}
+
+// Create 1500 stars
+createStars(500);
+
+            var countDownDate = new Date("Feb 06, 2025 00:00:00").getTime();
+            var x = setInterval(function(){
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+                
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+                
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                }
+            }, 1000);
+
+
+        var tl = gsap.timeline();
+
+        tl.from("h2", {
+            y: -30,
+            duration: 1,
+            delay: 0.3,
+            opacity: 0
+        });
+
+        tl.from(".part2 h3", {
+            y: -30,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.4
+        });
+
+        gsap.from(".hero", {
+            x: -700,
+            opacity: 0,
+            duration: 3,
+            delay: 0.5,
+            stagger: 1
+        });
+
+        gsap.to(".boat", {
+            y: -20,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        gsap.to(".needle-hour", {
+            rotate: 360,
+            transformOrigin: "bottom center",
+            duration: 60,
+            repeat: -1,
+            ease: "linear"
+        });
+
+        gsap.to(".needle-minute", {
+            rotate: 360,
+            transformOrigin: "bottom center",
+            duration: 10,
+            repeat: -1,
+            ease: "linear"
+        });
+  
+
+         
+  </script>
+  
+    
+  </script>
 </body>
 </html>
